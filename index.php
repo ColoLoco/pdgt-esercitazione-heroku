@@ -19,8 +19,8 @@ $url = "https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&text
 urlencode("Ciao, mi hai scritto: {$text}");
 
 $handle = curl_init($url);
-curl_septopt($handle, CURLOPT_RETURNTRANSFER, true);
-curl_septopt($handle, CURLOPT_POST, true);
+curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($handle, CURLOPT_POST, true);
 $response = curl_exec($handle);
 
-error_log("sendMessage: " . response);
+error_log("sendMessage: " . $response);
